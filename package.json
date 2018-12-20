@@ -1,6 +1,6 @@
 {
   "name": "trigram-index",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Creates an index using trigrams.",
   "main": "build.js",
   "scripts": {
@@ -11,6 +11,11 @@
     "build": "npm run build:node && npm run build:umd",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "build.js",
+    "umd.js",
+    "index.js"
+  ],
   "keywords": [
     "trigram"
   ],
