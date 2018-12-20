@@ -1,0 +1,29 @@
+{
+  "env": {
+    "NODE": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": true
+            }
+          }
+        ]
+      ]
+    },
+    "UMD": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": "umd",
+            "targets": {
+              "browsers": ["last 2 versions"]
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
