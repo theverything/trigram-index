@@ -3,9 +3,9 @@ function toTrigrams(phrase) {
   const trigrams = [];
 
   tokens.forEach(t => {
-    const rawData = ' ' + t + ' ';
+    const rawData = ` ${t} `;
 
-    for (let i = rawData.length - 3; i >= 0; i = i - 1) {
+    for (let i = rawData.length - 3; i >= 0; i -= 1) {
       trigrams.push(rawData.slice(i, i + 3));
     }
   });
@@ -70,7 +70,7 @@ export default class TrigramIndex {
         const intersectionSize = intersection[i];
         // modified Sørensen–Dice coefficient (using trigrams rather than bigrams)
         // https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
-        const score = (2 * intersectionSize) / (m.length + p.length);
+        const score = Math.min((2 * intersectionSize) / (m.length + p.length), 1);
 
         return { match, score };
       })
